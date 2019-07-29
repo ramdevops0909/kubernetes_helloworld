@@ -1,0 +1,37 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello-world-deployment
+spec:
+  replicas: 3
+  minReadySeconds: 30
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: hello-world-k8s
+    spec:
+      containers:
+      - name: hello-world-k8s
+        image: $dockerImage:$BUILD_NUMBER
+        ports:
+        - containerPort: 8080
+---
+	
+kind: Service
+apiVersion: v1
+metadata:
+  name:  hello-world-service
+spec:
+  selector:
+    app:  hello-world-k8s
+  type:  NodePort
+  ports:
+  - name:  http
+    port:  8080
+    nodePort: 30001
+    protocol: TCP
