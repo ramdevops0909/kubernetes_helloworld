@@ -5,6 +5,9 @@ metadata:
 spec:
   replicas: 3
   minReadySeconds: 30
+  selector:
+    matchLabels:
+      app: hello-world-k8s
   strategy:
     type: RollingUpdate
     rollingUpdate:
