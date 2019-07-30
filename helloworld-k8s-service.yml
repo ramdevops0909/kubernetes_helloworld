@@ -23,6 +23,18 @@ spec:
         image: $dockerImage:$BUILD_NUMBER
         ports:
         - containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: /actuator/healt
+            port: 3000
+          initialDelaySeconds: 1
+          timeoutSeconds: 1
+        livenessProbe:
+          httpGet:
+            path: /actuator/healt
+            port: 3000
+          initialDelaySeconds: 10
+          timeoutSeconds: 1
 ---
 kind: Service
 apiVersion: v1
