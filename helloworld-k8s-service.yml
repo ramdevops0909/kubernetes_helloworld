@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: hello-world-k8s
-        image: $dockerImage:$BUILD_NUMBER
+        image: $registry:$BUILD_NUMBER
         ports:
         - containerPort: 8080
         readinessProbe:
