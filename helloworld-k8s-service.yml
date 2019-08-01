@@ -50,4 +50,3 @@ spec:
     protocol: TCP
   externalIPs:
     - 35.231.79.157
-    - 35.229.88.96
