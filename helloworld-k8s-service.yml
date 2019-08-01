@@ -43,9 +43,8 @@ metadata:
 spec:
   selector:
     app:  hello-world-k8s
-  type:  NodePort
+  type:  LoadBalancer
   ports:
   - name:  http
     port:  8080
-    nodePort: 30005
     protocol: TCP
