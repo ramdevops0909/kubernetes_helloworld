@@ -160,5 +160,6 @@ pipeline {
 
 ```
 
-In order to access above deployed helloworld micro service, we need to use this URL `http://<Loadbalancer>:<<port>>` in your browser, you should be able to see as below
+In order to access above deployed helloworld micro service, we need to use this URL `http://<Loadbalancer>:<<port>>` in your browser, you should be able to see as below .....
+
 	Hello World from upday!
