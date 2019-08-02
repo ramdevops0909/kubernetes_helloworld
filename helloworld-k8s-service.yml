@@ -48,5 +48,3 @@ spec:
   - name:  http
     port:  8080
     protocol: TCP
-  externalIPs:
-    - 35.231.79.157
